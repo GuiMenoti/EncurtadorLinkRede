@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário Rede Líderes</title>
+
+  <!-- Metadados para pré-visualização do WhatsApp -->
+  <meta property="og:title" content="Participe da Rede Líderes" />
+  <meta property="og:description" content="Preencha o formulário para entrar na comunidade de líderes." />
+  <meta property="og:image" content="https://drive.google.com/file/d/1SgpSsnz3mlxMI7DKBII91b0iTiTnzdr8/view?usp=sharing" />
+  <meta property="og:url" content="https://redelideres.com/Formulario-Lideres" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #1a365d 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 90% 70%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 10% 90%, rgba(59, 130, 246, 0.04) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(59, 130, 246, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      animation: float 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .bubble:nth-child(1) {
+      width: 120px;
+      height: 120px;
+      top: 10%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .bubble:nth-child(2) {
+      width: 80px;
+      height: 80px;
+      top: 20%;
+      right: 20%;
+      animation-delay: 2s;
+    }
+
+    .bubble:nth-child(3) {
+      width: 60px;
+      height: 60px;
+      bottom: 30%;
+      left: 15%;
+      animation-delay: 4s;
+    }
+
+    .bubble:nth-child(4) {
+      width: 100px;
+      height: 100px;
+      bottom: 20%;
+      right: 10%;
+      animation-delay: 1s;
+    }
+
+    .bubble:nth-child(5) {
+      width: 40px;
+      height: 40px;
+      top: 60%;
+      left: 70%;
+      animation-delay: 3s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      padding: 40px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      margin-bottom: 30px;
+    }
+
+    .logo h1 {
+      color: #ffffff;
+      font-size: 2.5em;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin-bottom: 10px;
+    }
+
+    .logo span {
+      color: #3b82f6;
+      font-weight: 900;
+    }
+
+    .subtitle {
+      color: #cbd5e0;
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .content {
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    .purpose {
+      background: linear-gradient(135deg, #3b82f6, #1e40af);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 1.3em;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .description {
+      color: #e2e8f0;
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .privacy-info {
+      background: rgba(59, 130, 246, 0.1);
+      border-left: 4px solid #3b82f6;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    .privacy-info p {
+      color: #cbd5e0;
+      font-size: 0.95em;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .privacy-info p:last-child {
+      margin-bottom: 0;
+    }
+
+    .emoji {
+      font-size: 1.1em;
+      margin: 0 2px;
+    }
+
+    .button {
+      background: linear-gradient(135deg, #3b82f6, #1e40af);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.1em;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+    }
+
+    .countdown {
+      color: #94a3b8;
+      font-size: 0.9em;
+      margin-top: 20px;
+    }
+
+    .loading-dots {
+      display: inline-block;
+      width: 20px;
+      text-align: left;
+    }
+
+    .loading-dots::after {
+      content: '';
+      animation: dots 1.5s infinite;
+    }
+
+    @keyframes dots {
+      0% { content: ''; }
+      25% { content: '.'; }
+      50% { content: '..'; }
+      75% { content: '...'; }
+      100% { content: ''; }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 30px 20px;
+      }
+      
+      .logo h1 {
+        font-size: 2em;
+      }
+      
+      .purpose {
+        font-size: 1.1em;
+      }
+      
+      .description {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  
+  <div class="container">
+    <div class="logo">
+      <h1>REDE <span>LÍDERES</span></h1>
+      <div class="subtitle">Conectando Lideranças de Excelência</div>
+    </div>
+
+    <div class="content">
+      <p class="purpose">
+        Nosso propósito é te DESTACAR como líder e te CONECTAR às demais lideranças.
+      </p>
+
+      <p class="description">
+        Este formulário é sua porta de entrada em nossa comunidade. Seus dados serão utilizados exclusivamente para cadastro em nossa plataforma.
+      </p>
+
+      <div class="privacy-info">
+        <p>Garantimos a proteção de suas informações e asseguramos que não serão compartilhadas sem a sua devida autorização.</p>
+        <p>Dados específicos que serão compartilhados dentro da REDE serão claramente sinalizados <span class="emoji">🔊</span> para você.</p>
+        <p>E os mantidos em sigilo <span class="emoji">🔒</span>, também.</p>
+      </div>
+    </div>
+
+    <button class="button" onclick="redirectToForm()">
+      Acessar Formulário
+    </button>
+
+    <div class="countdown" id="countdown">
+      Redirecionamento automático em <span id="timer">10</span> segundos<span class="loading-dots"></span>
+    </div>
+  </div>
+
+  <script>
+    let timeLeft = 10;
+    const timerElement = document.getElementById('timer');
+    const countdownElement = document.getElementById('countdown');
+
+    function updateTimer() {
+      timerElement.textContent = timeLeft;
+      timeLeft--;
+
+      if (timeLeft < 0) {
+        redirectToForm();
+      }
+    }
+
+    function redirectToForm() {
+      countdownElement.innerHTML = 'Redirecionando<span class="loading-dots"></span>';
+      setTimeout(() => {
+        window.location.href = 'https://redelideres.notion.site/22218ac9dd4981d0b436e39f8e7ec3f6';
+      }, 1000);
+    }
+
+    // Inicia o contador
+    const interval = setInterval(updateTimer, 1000);
+
+    // Para o contador se o usuário clicar no botão
+    document.querySelector('.button').addEventListener('click', () => {
+      clearInterval(interval);
+    });
+  </script>
+</body>
+</html>
